@@ -1,4 +1,4 @@
-""" # ¿QUÉ VALORES PUEDES USAR? TIPOS DE DATOS 
+# ¿QUÉ VALORES PUEDES USAR? TIPOS DE DATOS 
 #Representando letras y números 
 #
 #Tipos básicos o primitivos 
@@ -350,7 +350,7 @@ print(conversion_decimal_str)
 conversion_logica_str = str(3<5 and 9.76 < 10)
 print(conversion_logica_str)
 
-# =================================================================================================== """
+# ===================================================================================================
 
 # RECORDANDO VALORES. VARIABLES Y ASIGNACIÓN
 
@@ -415,41 +415,82 @@ print(area)
 #       _\-----|---------------|
 #       \  pi  |    3.14159    |
 #       _\-----|---------------|
-#       \ area | "El área es " |
+#       \  s   | "El área es " |
+#       _\-----|---------------|
+#       \ area |   78.53795    |
 #       _\-----|---------------|
 #       \      |               |
 #       _\-----|---------------|
 
 
-
-
-
 # Reasignando valores  Asignación 
 # nombre = expresión
 # >>> r = 12.8 
-# >>> r + 10 Salida 22.8 
+# >>> r + 10 Salida 22.8
+r = 12.8
+print(r + 10)
+#
 # >>> area Salida 78.53795
-# memoria r5 pi3.14159 s"El área es " area 78.53795 12.8
+print(area)
+
+#                     💻
+#                /-----------\
+#               /   Memoria   \
+#       _______/---------------\
+#       \  r   |       5       |
+#       _\-----|---------------|
+#       \  pi  |    3.14159    |
+#       _\-----|---------------|
+#       \  s   | "El área es " |
+#       _\-----|---------------|
+#       \ area |   78.53795    |
+#       _\-----|---------------|
+#       \      |     12.8      |
+#       _\-----|---------------|
+
 
 # ¡Cuidado! Las variables deben existir
 # nombre = expresión
 # >>> r = 12.8 
-# >>> r + 10 Salida 22.8 
+# >>> r + 10 Salida 22.8
+r = 12.8
+print(r + 10) 
+#
 # >>> area Salida 78.53795
-# >>> area = pi * radio ** 2 Salida NameError: name 'radio' is not defined 
-# memoria r5 pi3.14159 s"El área es " area 78.53795 r 12.8
+print(area)
+#
+# >>> area = pi * radio ** 2 Salida NameError: name 'radio' is not defined
+area = pi * radio ** 2
+print(area)
+
+#                     💻
+#                /-----------\
+#               /   Memoria   \
+#       _______/---------------\
+#       \  r   |       5       |
+#       _\-----|---------------|
+#       \  pi  |    3.14159    |
+#       _\-----|---------------|
+#       \  s   | "El área es " |
+#       _\-----|---------------|
+#       \ area |   78.53795    |
+#       _\-----|---------------|
+#       \      |     12.8      |
+#       _\-----|---------------|
 
 
 # Nombres de variables  ¿Qué nombres puedo usar? 
 # • Debenempezar con una letra o '_' 
 # • Puede seguir con letras, números, '_' 
+#
 # ✔️ pesos_por_hora   || ✖️ Min+Seg
 # ✔️ i                || ✖️ 12deLaNoche 
 # ✔️ Clark            || ✖️ Bruce Wayne
-# ✔️ _CRISTIAN        || ✖️ 
-# ✔️ km20s            || ✖️
-# ✔️ vAlErIa          || ✖️ 
-# ✔️ j0rg3            || ✖️
+# ✔️ _CRISTIAN         
+# ✔️ km20s            
+# ✔️ vAlErIa           
+# ✔️ j0rg3            
+#
 #  • Las mayúsculas / minúsculas importan 
 # Vivaldi ≠ vivaldi ≠ viValdi ≠ VIVALDI 
 
@@ -458,10 +499,15 @@ print(area)
 #
 # • Estas palabras NUNCA pueden ser usadas 
 #
-# and      || del     || from   || nonlocal || while 
-# as       || elif    || global || not      || with
-# assert   || else    || if     || or       || yield
-# break    || except  || import || pass     || True 
-# class    || exec    || in     || raise    || False 
-# continue || finally || is     || return   || None
-# def      || for     || lambda || try      || 
+#   ========================================================
+#   || and      || del     || from   || nonlocal || while ||
+#   || as       || elif    || global || not      || with  ||
+#   || assert   || else    || if     || or       || yield ||
+#   || break    || except  || import || pass     || True  ||
+#   || class    || exec    || in     || raise    || False ||
+#   || continue || finally || is     || return   || None  ||
+#   || def      || for     || lambda || try      ||       ||
+#   ========================================================
+
+#=============================================================================== 
+
