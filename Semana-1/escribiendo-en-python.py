@@ -59,4 +59,5 @@
 # >>> res
 # >>> 8
 # Correcto
-# ¡Excelente! El valor de la variable res es la suma del último valor que se le dio a la variable x (es decir, 6) más el valor que tenía la variable y (es decir, 2). La suma de 6+2 es igual a 8.
+# ¡Excelente! El valor de la variable res es la suma del último valor que se le dio a la variable x (es decir, 6) 
+# más el valor que tenía la variable y (es decir, 2). La suma de 6+2 es igual a 8.
