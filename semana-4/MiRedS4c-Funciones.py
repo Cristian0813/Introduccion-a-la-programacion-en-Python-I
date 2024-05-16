@@ -1,8 +1,8 @@
-#Finalmente, podemos ver que nuestro archivo es cada vez mÃ¡s grande.
+#Finalmente, podemos ver que nuestro archivo es cada vez más grande.
 
-#Vamos a crear un nuevo archivo .py y copiaremos en Ã©l todas las funciones que hemos definido.
+#Vamos a crear un nuevo archivo .py y copiaremos en él todas las funciones que hemos definido.
 #Llamaremos a este archivo S4Red.py. Luego, para poder utilizar estas funciones dentro de nuestro archivo
-#principal, utilizaremos la instrucciÃ³n import.
+#principal, utilizaremos la instrucción import.
 
 
 import S4Red as Red
@@ -39,9 +39,9 @@ while opcion != 0:
 print("Gracias por usar Mi Red ToyFriends. ¡Hasta pronto!")
 
 
-#Como puedes ver, la parte principal de tu programa ahora es mucho mÃ¡s corto.
-#Gran parte de la funcionalidad estÃ¡ encapsulada en funciones, y estas funciones estÃ¡n definidas
+#Como puedes ver, la parte principal de tu programa ahora es mucho más corto.
+#Gran parte de la funcionalidad estÃ¡ encapsulada en funciones, y estas funciones están definidas
 # en otro archivo que hemos importado.
 
-#Al usar funciones podemos concentrarnos en partes mÃ¡s especÃ­ficas de nuestro cÃ³digo,
-# y nos ayuda a razonar a un nivel mÃ¡s alto.
+#Al usar funciones podemos concentrarnos en partes más específicas de nuestro código,
+# y nos ayuda a razonar a un nivel más alto.

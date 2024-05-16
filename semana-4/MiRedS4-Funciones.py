@@ -1,17 +1,3 @@
-#Hola.
-#En esta ocasiÃ³n vamos a continuar con el cÃ³digo de nuestra red social,
-#al cual le habÃ­amos agregado un menÃº.
-#
-#El programa de la semana anterior permitÃ­a:
-#1. Obtener datos del usuario
-#2. Consultar y mostrar varios mensajes de estado del usuario
-#3. Escoger entre distintas acciones que el usuario puede realizar
-#
-
-#Si lograste agregar una opciÃ³n nueva al sistema, por ejemplo, para escribir los datos
-#del perfil del usuario, habrÃ¡s notado que tienes que escribir de nuevo el cÃ³digo necesario
-#con un print por cada dato. El cÃ³digo se verÃ­a como estÃ¡ mÃ¡s abajo.
-
 # Mensaje de bienvenida
 print("Bienvenido a ... ")
 print("""
@@ -146,15 +132,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-#Si pruebas este cÃ³digo, verÃ¡s que funciona correctamente, pero nuestro programa ahora es bastante largo.
-#Casi 140 lÃ­neas.
-#Esto en sÃ­ no es malo. Sin embargo, si le pones atenciÃ³n, verÃ¡s que hay cÃ³digo que hemos tenido
-#que repetir completamente. Por ejemplo, el cÃ³digo para mostrar el perfil de un usuario estÃ¡ escrito tres veces.
-#Si ahora queremos agregar un nuevo dato del usuario, por ejemplo, el paÃ­s en que vive, debemos modificar
-#al menos tres partes distintas del programa.
-#Esto lo podemos hacer, talvez sin cometer errores, en un programa pequeÃ±o como Ã©ste.
-#Pero en programas mÃ¡s grandes, es muy fÃ¡cil que nos olvidemos de actualizar una parte del cÃ³digo,
-#o que no recordemos todas las partes que hay que modificar.
-
-#Cuando tenemos instrucciones que se repiten tantas veces en distintas partes del programa,
-# es una indicaciÃ³n de que talvez necesitamos agregar funciones.
