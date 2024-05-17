@@ -1,32 +1,147 @@
-import RedToyFriends as Red
+import os
 
-#Aquí­ empieza el programa principal.
-Red.mostrar_bienvenida()
-(nombre, edad, estatura_m, estatura_cm, num_amigos, genero, num_telefono, ciudad, pais) = Red.obtener_datos()
+def mostrar_bienvenida():
+    print("Bienvenido a ... ")
+    print("""
+                     _                __  _________               _____                           
+            ____ ___(_) ________  ____/ / /___  ___/_________  ____/ ___/______  _______  ________
+           / __ `__ \/ / ___/ _ \/ __  /     / /   / ___/ ___/ ___/\__ \/ ___/ / / / _ \/ ___/ _ \\
+          / / / / / / (__  )  __/ /_/ /     / /   (__  |__  ) /__  ___/ / /__/ /_/ /  __/ /  /  __/
+         /_/ /_/ /_/_/____/\___/\__,_/     /_/   /____/____/\___/ /____/\___/\__, /\___/_/   \___/
+                                                                                /____/              
+    """)
 
-print("Muy bien,", nombre, ". Entonces podemos crear un perfil con estos datos.")
-mensajes_amigos = {}
-mensaje_publico = ""
-Red.mostrar_perfil(nombre, edad, estatura_m, estatura_cm, num_amigos, genero, num_telefono, ciudad, pais, mensaje_publico, mensajes_amigos)
-print("Ya podemos preguntar, recordar y calcular datos. Esperamos que disfrutes con Mi Red ToyFriends")
-print("--------------------------------------------------")
+def obtener_nombre():
+    nombre = input("Para empezar, dime como te llamas. ")
+    return nombre
 
-opcion = 1
-while opcion != 0:
-    opcion = Red.opcion_menu()
-    if opcion == 1:
-        mensaje_publico = Red.obtener_mensaje()
-    elif opcion == 2:
-        for i in range(num_amigos):
-            nombre_amigo = input("Ingresa el nombre de tu amigo o amiga: ")
-            mensaje_amigo = Red.obtener_mensaje_amigo(nombre_amigo)
-            mensajes_amigos[nombre_amigo] = mensaje_amigo
-    elif opcion == 3:
-        Red.mostrar_perfil(nombre, edad, estatura_m, estatura_cm, num_amigos, genero, num_telefono, ciudad, pais, mensaje_publico, mensajes_amigos)
-    elif opcion == 4:
-        nombre, edad, (estatura_m, estatura_cm), num_amigos, genero, num_telefono, ciudad, pais = Red.obtener_datos()
-        Red.mostrar_perfil(nombre, edad, estatura_m, estatura_cm, num_amigos, genero, num_telefono, ciudad, pais, mensaje_publico, mensajes_amigos)
-    elif opcion == 0:
-        print("Has decidido salir.")
+def obtener_edad():
+    agno = int(input("Para preparar tu perfil, dime en qué año naciste. "))
+    return 2024 - agno - 1
 
-print("Gracias por usar Mi Red ToyFriends. ¡Hasta pronto!")
+def obtener_estatura():
+    estatura = float(input("Cuéntame más de ti, para agregarlo a tu perfil. ¿Cuánto mides? Dímelo en metros. "))
+    metros = int(estatura)
+    centimetros = int((estatura - metros) * 100)
+    return (metros, centimetros)
+
+def obtener_sexo():
+    sexo = input("Por favor, ingresa tu sexo (M = Masculino, F = Femenino): ")
+    while sexo != 'M' and sexo != 'F':
+        sexo = input("Por favor, ingresa tu sexo (M = Masculino, F = Femenino): ")
+    return sexo
+
+def obtener_pais():
+    pais = input("Indica tu país de nacimiento: ")
+    return pais
+
+def obtener_lista_amigos():
+    linea = input("Muy bien. Finalmente, escribe una lista con los nombres de tus amigos, separados por una ',': ")
+    amigos = linea.split(",")
+    return amigos
+
+def mostrar_perfil(nombre, edad, estatura_m, estatura_cm, sexo, pais, amigos):
+    print("--------------------------------------------------")
+    print("Nombre:    ", nombre)
+    print("Edad:      ", edad, "años")
+    print("Estatura:  ", estatura_m, "metro y", estatura_cm, "centímetros")
+    print("Sexo:      ", sexo)
+    print("País:      ", pais)
+    print("Amigos:    ", len(amigos))
+    print("--------------------------------------------------")
+
+def opcion_menu():
+    print()
+    print("Acciones disponibles:")
+    print()
+    print("  1. Escribir un mensaje")
+    print("  2. Mostrar mi muro")
+    print("  3. Mostrar los datos de perfil")
+    print("  4. Actualizar el perfil de usuario")
+    print("  5. Agregar un nuevo amigo")
+    print("  6. Mostrar últimos estados de amigos")
+    print("  0. Salir")
+    print()
+    opcion = int(input("Ingresa una opción: "))
+    while opcion < 0 or opcion > 6:
+        print("No conozco la opción que has ingresado. Inténtalo otra vez.")
+        opcion = int(input("Ingresa una opción: "))
+    return opcion
+
+def obtener_mensaje():
+    mensaje = input("Ahora vamos a publicar un mensaje. ¿Qué piensas hoy? ")
+    return mensaje
+
+def mostrar_mensaje(origen, mensaje):
+    print("--------------------------------------------------")
+    print(origen + ":", mensaje)
+    print("--------------------------------------------------")
+
+def mostrar_muro(muro):
+    print("------ MURO (" + str(len(muro)) + " mensajes) ---------")
+    for mensaje in muro:
+        print(mensaje)
+    print("--------------------------------------------------")
+
+def publicar_mensaje(origen, amigos, mensaje, muro):
+    print("--------------------------------------------------")
+    print(origen, "dice:", mensaje)
+    print("--------------------------------------------------")
+    muro.append(mensaje)
+    for amigo in amigos:
+        if existe_archivo(amigo + ".user"):
+            archivo = open(amigo + ".user", "a")
+            archivo.write(origen + ":" + mensaje + "\n")
+            archivo.close()
+
+def existe_archivo(ruta):
+    return os.path.isfile(ruta)
+
+def leer_usuario(nombre):
+    archivo_usuario = open(nombre + ".user", "r")
+    nombre = archivo_usuario.readline().rstrip()
+    edad = int(archivo_usuario.readline())
+    estatura = float(archivo_usuario.readline())
+    estatura_m = int(estatura)
+    estatura_cm = int((estatura - estatura_m) * 100)
+    sexo = archivo_usuario.readline().rstrip()
+    pais = archivo_usuario.readline().rstrip()
+    amigos = archivo_usuario.readline().rstrip().split(",")
+    estado = archivo_usuario.readline().rstrip()
+    muro = []
+    mensaje = archivo_usuario.readline().rstrip()
+    while mensaje != "":
+        muro.append(mensaje)
+        mensaje = archivo_usuario.readline().rstrip()
+    archivo_usuario.close()
+    return (nombre, edad, estatura_m, estatura_cm, sexo, pais, amigos, estado, muro)
+
+def escribir_usuario(nombre, edad, estatura_m, estatura_cm, sexo, pais, amigos, estado, muro):
+    archivo_usuario = open(nombre + ".user", "w")
+    archivo_usuario.write(nombre + "\n")
+    archivo_usuario.write(str(edad) + "\n")
+    archivo_usuario.write(str(estatura_m + estatura_cm / 100) + "\n")
+    archivo_usuario.write(sexo + "\n")
+    archivo_usuario.write(pais + "\n")
+    archivo_usuario.write(",".join(amigos) + "\n")
+    archivo_usuario.write(estado + "\n")
+    for mensaje in muro:
+        archivo_usuario.write(mensaje + "\n")
+    archivo_usuario.close()
+
+def agregar_amigo(amigos):
+    nuevo_amigo = input("Ingresa el nombre de tu nuevo amigo: ")
+    amigos.append(nuevo_amigo)
+    print("¡Nuevo amigo", nuevo_amigo, "agregado con éxito!")
+
+def mostrar_ultimos_estados_amigos(amigos):
+    print("------ ÚLTIMOS ESTADOS DE AMIGOS ---------")
+    for amigo in amigos:
+        if existe_archivo(amigo + ".user"):
+            archivo = open(amigo + ".user", "r")
+            lineas = archivo.readlines()
+            if len(lineas) > 0:
+                ultimo_estado = lineas[-1].strip()
+                print(amigo + ":", ultimo_estado)
+            archivo.close()
+    print("--------------------------------------------------")
