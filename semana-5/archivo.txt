@@ -1,0 +1,1 @@
+Aqui encontraras un ejemplo como abrir un archivo .txt usando Python
