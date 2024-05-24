@@ -19,20 +19,20 @@ Este curso te permitirá dar tus primeros pasos en el mundo de la programación 
     * Operadores
     * Instrucciones de control
     * Funciones
-4. **[Estructuras de datos:](https://github.com/Cristian0813/Introduccion-a-la-programacion-en-Python-I/tree/main/Semana-4)**
+4. **[Estructuras de datos:](./Semana-4)**
     * Listas
     * Tuplas
     * Diccionarios
-5. **[Programación orientada a objetos:](https://github.com/Cristian0813/Introduccion-a-la-programacion-en-Python-I/tree/main/Semana-5)**
+5. **[Programación orientada a objetos:](./Semana-5)**
     * Conceptos básicos de POO
     * Clases y objetos
     * Atributos y métodos
     * Herencia y polimorfismo
-6. **[Entrada y salida de datos:](https://github.com/Cristian0813/Introduccion-a-la-programacion-en-Python-I/tree/main/Semana-6)**
+6. **[Entrada y salida de datos:](./Semana-6)**
     * Lectura de archivos
     * Escritura en archivos
     * Interacción con el usuario
-7. **[Módulos y paquetes:](https://github.com/Cristian0813/Introduccion-a-la-programacion-en-Python-I/tree/main/Semana-7)**
+7. **[Módulos y paquetes:](./Semana-7)**
     * ¿Qué son los módulos y paquetes?
     * Importar módulos y paquetes
     * Crear tus propios módulos y paquetes
