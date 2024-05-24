@@ -71,6 +71,6 @@ Al finalizar el curso, obtendrás un certificado que acredita la realización de
 
 **Enlaces de interés:**
 
-* [https://www.coursera.org/courses?query=python](https://www.coursera.org/learn/aprendiendo-programar-python)
+* [COURSERA](https://www.coursera.org/learn/aprendiendo-programar-python)
 
 **Nota:** Este README.md se ha creado a partir de la información disponible en Internet sobre el curso "Introducción a la programación en Python I: Aprendiendo a programar con Python". Se recomienda consultar las fuentes originales para obtener información más detallada.
