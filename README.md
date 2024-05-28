@@ -9,7 +9,6 @@
     * [Estructuras de datos](#estructuras-de-datos)
     * [Programación orientada a objetos](#programación-orientada-a-objetos)
     * [Entrada y salida de datos](#entrada-y-salida-de-datos)
-    * [Módulos y paquetes](#módulos-y-paquetes)
 3. [Recursos del curso](#recursos-del-curso)
 4. [Requisitos previos](#requisitos-previos)
 5. [Público objetivo](#público-objetivo)
@@ -55,11 +54,6 @@ Este curso te permitirá dar tus primeros pasos en el mundo de la programación 
 * Lectura de archivos
 * Escritura en archivos
 * Interacción con el usuario
-
-### [Módulos y paquetes:](./Semana-7)
-* ¿Qué son los módulos y paquetes?
-* Importar módulos y paquetes
-* Crear tus propios módulos y paquetes
 
 ## Recursos del curso
 * **_Vídeos explicativos:_** El curso se compone de una serie de vídeos explicativos que presentan los conceptos de forma clara y concisa.
